@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Validator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 10px;
+            width: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Number Validator</h1>
+    <p>Enter a number below and click the button.</p>
+    <input type="text" id="numberInput" placeholder="Enter number here">
+    <br><br>
+    <button onclick="validateNumber()">Validate Number</button>
+    
+    <script>
+        function validateNumber() {
+            let userInput = document.getElementById("numberInput").value;
+            let number = Number(userInput);
+
+            if (userInput === "") {
+                alert("Please enter a number.");
+                return;
+            }
+            
+            if (!isNaN(number)) {
+                alert("Valid number entered: " + number);
+            } else {
+                alert("Invalid input. Please enter a valid number.");
+            }
+        }
+    </script>
+</body>
+</html>
